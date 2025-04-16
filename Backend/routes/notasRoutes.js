@@ -9,6 +9,6 @@ router.get('/notas', notasController.getTodasLasNotas);
 router.get('/notas/:id', notasController.getNotasEstudiante);
 
 // Editar una nota por ID de nota
-router.put('/nota/:id_nota', notasController.editarNotaEstudiante);
+router.put('/notas/:id_nota', notasController.editarNotaEstudiante);
 
 module.exports = router;

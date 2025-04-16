@@ -41,7 +41,7 @@ exports.getNotasEstudiante = async (req, res) => {
 
 exports.editarNotaEstudiante = async (req, res) => {
     const { id_nota } = req.params;
-    const { nota, gestion, id_materia, id_persona } = req.body;
+    const { notafinal, gestion, id_materia, id_persona } = req.body;
   
     try {
       const notaExistente = await Nota.findByPk(id_nota);
@@ -51,14 +51,14 @@ exports.editarNotaEstudiante = async (req, res) => {
       }
   
       // Actualizar los campos (si vienen en el cuerpo)
-      if (nota !== undefined) notaExistente.nota = nota;
+      if (notafinal !== undefined) notaExistente.notafinal = notafinal;
       if (gestion !== undefined) notaExistente.gestion = gestion;
       if (id_materia !== undefined) notaExistente.id_materia = id_materia;
       if (id_persona !== undefined) notaExistente.id_persona = id_persona;
   
       await notaExistente.save();
   
-      res.json({ mensaje: 'Nota actualizada exitosamente', nota: notaExistente });
+      res.json({ mensaje: 'Nota actualizada exitosamente', notafinal: notaExistente });
     } catch (error) {
       console.error('Error al editar la nota:', error);
       res.status(500).json({ error: 'Error al actualizar la nota' });

@@ -17,9 +17,10 @@ console.log("DB_PASSWORD:", process.env.DB_PASSWORD);
 
 // Rutas 
 const personaRoutes = require('./routes/personaRoutes');
+const notasRouters = require('./routes/notasRoutes');
 
 app.use('/api', personaRoutes);
-
+app.use('/api', notasRouters);
 
 //Sincronizar la base de datos
 

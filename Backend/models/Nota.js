@@ -4,7 +4,7 @@ const { Materia } = require("./Materia");
 const { Persona } = require("./Persona");
 
 const Nota = db.define("Nota", {
-    id_nota: {
+    id_notas: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: true,
@@ -13,7 +13,7 @@ const Nota = db.define("Nota", {
         type: DataTypes.STRING,
         allowNull: false,
     },
-    nota: {
+    notafinal: {
         type: DataTypes.FLOAT,
         allowNull: false,
     },
@@ -35,7 +35,7 @@ const Nota = db.define("Nota", {
     },
   
 },{
-    tableName: "nota",
+    tableName: "notas",
     timestamps: false, 
 });
 
@@ -44,8 +44,3 @@ module.exports = { Nota };
 // Referencias de claves foráneas
 Nota.belongsTo(Materia, { foreignKey: 'id_materia' });
 Nota.belongsTo(Persona, { foreignKey: 'id_persona' });
-
-
-
-
-

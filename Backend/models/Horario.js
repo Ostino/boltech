@@ -25,8 +25,3 @@ const Horario = db.define('Horario', {
 });
 
 module.exports = { Horario };
-
-
-
-
-

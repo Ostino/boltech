@@ -1,4 +1,4 @@
-const { Nota } = require('../models/Nota'); // Asegúrate de que esta ruta sea correcta
+const { Nota } = require('../models/Nota');
 const { Persona } = require('../models/Persona');
 const { Materia } = require('../models/Materia');
 
@@ -24,7 +24,7 @@ exports.getNotasEstudiante = async (req, res) => {
         where: { id_persona: id },
         include: [
           { model: Materia, attributes: ['nombre'] },
-          { model: Persona, attributes: ['nombre', 'apellido'] }
+          { model: Persona, attributes: ['nombre'] }
         ]
       });
   
@@ -64,4 +64,3 @@ exports.editarNotaEstudiante = async (req, res) => {
       res.status(500).json({ error: 'Error al actualizar la nota' });
     }
   };
-  
